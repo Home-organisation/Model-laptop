@@ -1,16 +1,19 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Wed Jul  1 20:12:41 2020
 
 @author: sudersan
 """
+
+from word_list import word_list
+
+
+
 class word_game:
     if __name__=="__main__":
         import random
         
-        
-        word_list={"apple":"A type of fruit","bike":"A two wheeler","cat":"a type of domesticated mammal","elephant":"The largest mammal on land","frog":"an amphibian","giraffe":"The tallest animal on earth"}
+        w = word_list()
+        word_list = w.words_list()
         
         words=list(word_list.keys())  
         hints=list(word_list.values())
@@ -36,18 +39,3 @@ class word_game:
             h=input("Do you want to continue playing:(Y/N):")
             if(h=='N'):
                 break
-        
-    
-    
-        
-    
-    
-            
-                
-        
-    
-        
-        
-        
-        
-
