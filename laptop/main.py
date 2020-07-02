@@ -26,9 +26,14 @@ class MelodyMaker(Screen):
         obj.play()
 
 
+class Missing_letter(Screen):
+    pass
+
+
 sm = ScreenManager()
 sm.add_widget(MenuScreen(name='menu'))
 sm.add_widget(MelodyMaker(name='Melody Maker'))
+sm.add_widget(Missing_letter(name='Missing'))
 
 
 class main(App):

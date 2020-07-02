@@ -1,17 +1,26 @@
 <MenuScreen>:
     RelativeLayout:
         Button:
-            text: 'Melody Maker'
-            on_press: root.manager.current = 'Melody Maker'
-            pos:0, 0
-            size_hint: None, None
-            size_hint: [0.3, 0.3]
-        Button:
             text: 'Quit'
             on_press: app.stop()
             pos_hint: {'right': 1, 'top': 1}
             size_hint: None, None
-            size_hint: [0.3, 0.3]
+            size_hint: [0.1, 0.1]
+        AnchorLayout:
+            anchor_y: 'bottom'
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: None, None
+                Button:
+                    text: 'Melody Maker'
+                    on_press: root.manager.current = 'Melody Maker'
+                    size:120, 100
+                    size_hint: None, None
+                Button:
+                    text:'Missing Letters'
+                    on_press: root.manager.current = 'Missing'
+                    size: 120, 100
+                    size_hint: None, None
 
 <MelodyMaker>:
     AnchorLayout:
@@ -63,3 +72,12 @@
         pos_hint: {'left': 1, 'top': 1}
         size_hint: None, None
         size: 200, 100
+
+<Missing_letter>:
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'center'
+        BoxLayout:
+            Button:
+                text:'helo'
+                on_press: root.manager.current = "menu"
