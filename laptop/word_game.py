@@ -5,37 +5,27 @@ Created on Wed Jul  1 20:12:41 2020
 """
 
 from word_list import word_list
-
+import random
 
 
 class word_game:
-    if __name__=="__main__":
-        import random
+    def __init__(self):
         
         w = word_list()
-        word_list = w.words_list()
+        self.word_list = w.words_list()
         
-        words=list(word_list.keys())  
-        hints=list(word_list.values())
+        self.words=list(self.word_list.keys())  
+        self.hints=list(self.word_list.values())
+        self.k = random.randint(0,len(self.word_list)-1)
+        self.chosen_word=self.words[self.k]
+        for i in range(0,2):
+            self.r=random.randint(1,len(self.chosen_word)-1)
+            self.chosen_word=self.chosen_word[:self.r]+"_"+self.chosen_word[self.r+1:]
         
-                
-        flag=0
-        while(True):
-            if(flag==0):
-                k=random.randint(0,len(word_list)-1)
-                chosen_word=words[k]
-                for i in range(0,2):
-                    r=random.randint(1,len(chosen_word)-1)
-                    chosen_word=chosen_word.replace(chosen_word[r],"_")
-            print("Find the word:",chosen_word)
-            print("Hint:",hints[k])
-            ans=input()
-            if(ans==words[k]):
-                print("Great....")
-                flag=0
+    def question(self):           
+        return(self.chosen_word,self.hints[self.k])
+    def answer(self,ans):
+            if(ans==self.words[self.k]):
+                return(1)
             else:
-                print("Try again...")
-                flag=1
-            h=input("Do you want to continue playing:(Y/N):")
-            if(h=='N'):
-                break
+                return(0)
