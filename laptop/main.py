@@ -9,9 +9,11 @@ obj = melody()
 
 
 Window.fullscreen = 'auto'
+Window.Clea
 
 
 Builder.load_file("main.kv")
+Builder.load_file("missing_letters.kv")
 
 
 class MenuScreen(Screen):
@@ -27,7 +29,11 @@ class MelodyMaker(Screen):
 
 
 class Missing_letter(Screen):
-    pass
+
+    word = "hello"
+
+    def get():
+        return 'None'
 
 
 sm = ScreenManager()

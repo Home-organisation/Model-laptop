@@ -31,9 +31,6 @@ class word_list():
             "answer": "what you say when someone asks ypu a question",
             "art": "something such as painting or drawing",
             "arrive": "to reach where you are going",
-             
-
-
         }
 
     def words_list(self):
