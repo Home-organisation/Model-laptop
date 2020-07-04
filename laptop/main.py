@@ -45,9 +45,11 @@ class Missing_letter(Screen):
         app = main()
         if word.answer(ans):
             self.status = 'Correct!!'
-            self.flag = 'Proceed'
         else:
             self.status = 'Sorry, try again'
+        if(self.status=='Correct!!'):
+            self.get()
+
 
 
 sm = ScreenManager()
