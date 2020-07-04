@@ -42,10 +42,11 @@ class Missing_letter(Screen):
         self.word, self.hint = word.quest()
         self.flag = 'Reset'
         self.question = self.word + ' Hint: ' + self.hint
-        app = App.get_running_app()
         self.ids.ques.text = self.question
+        self.ids.answer.text = ''
         print('exec', self.question)
     def submit(self, ans):
+        print(ans)
         if word.answer(ans):
             self.status = 'Correct!!'
             self.get()
@@ -55,8 +56,8 @@ class Missing_letter(Screen):
 
 
 sm = ScreenManager()
-# sm.add_widget(MenuScreen(name='menu'))
-# sm.add_widget(MelodyMaker(name='Melody Maker'))
+sm.add_widget(MenuScreen(name='menu'))
+sm.add_widget(MelodyMaker(name='Melody Maker'))
 sm.add_widget(Missing_letter(name='Missing'))
 
 

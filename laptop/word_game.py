@@ -22,7 +22,12 @@ class word_game:
             self.r=random.randint(1,len(self.chosen_word)-1)
             self.chosen_word=self.chosen_word[:self.r]+"_"+self.chosen_word[self.r+1:]
         
-    def quest(self):           
+    def quest(self):
+        self.k = random.randint(0,len(self.word_list)-1)
+        self.chosen_word=self.words[self.k]
+        for i in range(0,2):
+            self.r=random.randint(1,len(self.chosen_word)-1)
+            self.chosen_word=self.chosen_word[:self.r]+"_"+self.chosen_word[self.r+1:]
         return(self.chosen_word,self.hints[self.k])
     def answer(self,ans):
             if(ans==self.words[self.k]):
