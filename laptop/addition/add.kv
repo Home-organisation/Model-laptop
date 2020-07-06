@@ -1,0 +1,50 @@
+<addition>:
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'top'
+        Button:
+            text: 'Return to Activities'
+            on_press: root.manager.current = 'menu'
+            size_hint: None, None
+            size: 200, 100
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'center'
+        size: 500, 500
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            Label:
+                text: root.question
+                size_hint: 0.3, 0.3
+            TextInput:
+                size_hint: 0.1, 0.3
+                # padding: [100, 0, 100, 0]
+                id: answer
+            Label:
+                size_hint: 0.3, 0.3
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'bottom'
+        BoxLayout:
+            orientation: 'horizontal'
+            Button:
+                text: 'start'
+                on_press: root.get()
+                size_hint: 0.3, 0.1
+            Label:
+                text: root.result
+                id: result
+                size_hint: 0.3, 0.1
+            Button:
+                text: 'submit'
+                on_press: root.submit()
+                size_hint: 0.3, 0.1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        Button:
+            text: 'open drawing pad'
+            on_press: root.openDraw()
+            size_hint: None, None
+            size: 200, 100
